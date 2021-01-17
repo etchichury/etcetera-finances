@@ -1,6 +1,9 @@
 import React from "react";
-import "./Home.css";
 
 export const Home = () => {
-  return <div className="Home"></div>;
+  return (
+    <div className="Home font-medium">
+      <p>Font Family</p>
+    </div>
+  );
 };
