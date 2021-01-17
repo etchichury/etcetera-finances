@@ -28,6 +28,10 @@
     "test": "craco test",
     "eject": "react-scripts eject"
   },
+  "pre-commit": [
+    "eslint",
+    "prettier"
+  ],
   "eslintConfig": {
     "extends": [
       "react-app",
