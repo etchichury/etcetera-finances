@@ -48,7 +48,7 @@ export const Header = () => {
           setShowModal(true);
         }}
       >
-        <div className="pr-4 felx self-center">Juliana Willson</div>
+        <div className="pr-4 felx self-center text-lg">Juliana Willson</div>
         <img
           className="w-12 h-12 rounded-full object-cover flex self-center"
           alt=""
@@ -60,7 +60,7 @@ export const Header = () => {
 
   return (
     <>
-      <div className="bg-white h-16 shadow-sm flex justify-between">
+      <div className="bg-white h-16 flex justify-between z-10 relative border-b-2 border-gray-100">
         <div className="text-4xl font-bold text-primary-700 tracking-tight pl-2 self-center">
           Etcetera Finances
         </div>
