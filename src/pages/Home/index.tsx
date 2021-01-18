@@ -1,10 +1,12 @@
 import React from "react";
 import { Header } from "../../components/Header/index";
+import { MenuBar } from "../../components/MenuBar";
 
 export const Home = () => {
   return (
-    <div className="w-screen h-screen bg-gray-100 ">
+    <div className="bg-gray-100 h-screen">
       <Header />
+      <MenuBar />
     </div>
   );
 };
