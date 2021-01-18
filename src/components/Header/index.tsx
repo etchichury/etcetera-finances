@@ -45,7 +45,7 @@ export const Header = () => {
       <div
         className="h-14 px-4 mr-2 rounded-md flex justify-center cursor-pointer hover:shadow-lg hover:bg-gray-100 self-center"
         onClick={() => {
-          setShowModal(true);
+          setShowModal(!showModal);
         }}
       >
         <div className="pr-4 felx self-center text-lg">Juliana Willson</div>
