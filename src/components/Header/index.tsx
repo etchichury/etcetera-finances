@@ -60,7 +60,7 @@ export const Header = () => {
 
   return (
     <>
-      <div className="bg-white h-16 flex justify-between z-10 relative border-b-2 border-gray-100">
+      <div className="bg-white h-16 flex justify-between z-10 relative border-b border-gray-300">
         <div className="text-4xl font-bold text-primary-700 tracking-tight pl-2 self-center">
           Etcetera Finances
         </div>
