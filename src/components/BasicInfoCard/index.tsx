@@ -2,6 +2,7 @@ import React from "react";
 import { FaMoneyBill } from "react-icons/fa";
 import { MdArrowDownward, MdArrowUpward } from "react-icons/md";
 import { InfoColumn, InfoHeader, InfoValue } from "../InfoColumn";
+import { IncomeBalanceChart } from "../Charts/IncomeBalance";
 
 export const BasicInfoCard = () => {
   return (
@@ -12,6 +13,7 @@ export const BasicInfoCard = () => {
           valueStyle="text-3xl font-bold"
           value={(17928.63).toLocaleString("en")}
         />
+        <IncomeBalanceChart />
       </InfoColumn>
       <InfoColumn>
         <InfoHeader Icon={MdArrowDownward} title="Income" />

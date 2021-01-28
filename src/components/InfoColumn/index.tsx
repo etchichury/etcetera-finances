@@ -12,20 +12,20 @@ type HeaderProps = {
 
 type ValueProps = {
   valueStyle: string;
-  value: number;
+  value: string;
 };
 
 export const InfoHeader = ({ Icon, title }: HeaderProps) => {
   return (
-    <div className="flex flex-row mb-2">
+    <div className="flex flex-row mb-4">
       <Icon className="self-center mr-2" size={32} />{" "}
-      <div className="text-xl font-medium">{title}</div>
+      <div className="text-2xl font-semibold">{title}</div>
     </div>
   );
 };
 
 export const InfoValue = ({ valueStyle, value }: ValueProps) => {
-  return <div className={valueStyle}>R$ {value}</div>;
+  return <div className={`${valueStyle} mb-6`}>R$ {value}</div>;
 };
 
 export const InfoColumn = ({ children }: InfoProps) => {
