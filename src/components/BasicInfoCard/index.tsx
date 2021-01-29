@@ -3,6 +3,8 @@ import { FaMoneyBill } from "react-icons/fa";
 import { MdArrowDownward, MdArrowUpward } from "react-icons/md";
 import { InfoColumn, InfoHeader, InfoValue } from "../InfoColumn";
 import { VerticalBarChart } from "../Charts/VerticalBar";
+import { LineSeriesChart } from "../Charts/LineSeries";
+
 const balanceData = [
   { x: "Jan", y: 200 },
   { x: "Feb", y: 498.62 },
@@ -46,6 +48,7 @@ export const BasicInfoCard = () => {
           valueStyle="text-2xl font-semibold"
           value={(5229.13).toLocaleString("en")}
         />
+        <LineSeriesChart data={incomeData} color="#1F41F7" />
       </InfoColumn>
       <InfoColumn>
         <InfoHeader Icon={MdArrowUpward} title="Outgoing" />
