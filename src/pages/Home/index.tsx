@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <div className="bg-gray-100 h-screen">
       <Header />
-      <MenuBar />
+      <MenuBar currentPage="home" />
       <BasicInfoCard />
     </div>
   );
