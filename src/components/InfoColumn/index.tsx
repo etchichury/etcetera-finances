@@ -29,5 +29,5 @@ export const InfoValue = ({ valueStyle, value }: ValueProps) => {
 };
 
 export const InfoColumn = ({ children }: InfoProps) => {
-  return <div className="flex flex-col">{children}</div>;
+  return <div className="flex flex-col w-1/3 h-96">{children}</div>;
 };
