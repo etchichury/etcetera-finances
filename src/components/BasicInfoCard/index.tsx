@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaMoneyBill } from "react-icons/fa";
 import { MdArrowDownward, MdArrowUpward } from "react-icons/md";
 import { InfoColumn, InfoHeader, InfoValue } from "../InfoColumn";
 import { VerticalBarChart } from "../Charts/VerticalBar";
 import { LineSeriesChart } from "../Charts/LineSeries";
+import { IconType } from "react-icons/lib";
+import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 
 const balanceData = [
   { x: "Jan", y: 200 },
@@ -31,33 +33,58 @@ const outgoingData = [
   { x: "Jun", y: 2455.07 },
 ];
 
+type ShowMoneyProps = {
+  Icon: IconType;
+};
+
 export const BasicInfoCard = () => {
+  const [closeEye, setCloseEye] = useState(false);
+
+  const ShowMoneyButton = ({ Icon }: ShowMoneyProps) => {
+    return (
+      <button
+        className="absolute top-5 right-5 max-h-full"
+        onClick={() => setCloseEye(!closeEye)}
+        style={{ outline: 0 }}
+      >
+        {<Icon size={30} />}
+      </button>
+    );
+  };
+
   return (
-    <div className="border border-black-300 bg-white ml-28 mr-12 mt-6 rounded-lg p-10 flex flex-row justify-between">
-      <InfoColumn>
-        <InfoHeader Icon={FaMoneyBill} title="Total balance" />
-        <InfoValue
-          valueStyle="text-3xl font-bold"
-          value={(17928.63).toLocaleString("en")}
-        />
-        <VerticalBarChart data={balanceData} color="#14D2ED" />
-      </InfoColumn>
-      <InfoColumn>
-        <InfoHeader Icon={MdArrowDownward} title="Income" />
-        <InfoValue
-          valueStyle="text-2xl font-semibold"
-          value={(5229.13).toLocaleString("en")}
-        />
-        <LineSeriesChart data={incomeData} color="#1F41F7" />
-      </InfoColumn>
-      <InfoColumn>
-        <InfoHeader Icon={MdArrowUpward} title="Outgoing" />
-        <InfoValue
-          valueStyle="text-2xl font-semibold"
-          value={(2348.75).toLocaleString("en")}
-        />
-        <VerticalBarChart data={outgoingData} color="#FB3030" />
-      </InfoColumn>
+    <div className="relative border bg-white ml-8 mr-8 mt-6 rounded-lg p-10 justify-between w-auto h-auto">
+      <div className="flex flex-row">
+        <InfoColumn>
+          <InfoHeader Icon={FaMoneyBill} title="Total balance" />
+          <InfoValue
+            valueStyle="text-3xl font-bold"
+            value={(17928.63).toLocaleString("en")}
+          />
+          <VerticalBarChart data={balanceData} color="#14D2ED" />
+        </InfoColumn>
+        <InfoColumn>
+          <InfoHeader Icon={MdArrowDownward} title="Income" />
+          <InfoValue
+            valueStyle="text-2xl font-semibold"
+            value={(5229.13).toLocaleString("en")}
+          />
+          <LineSeriesChart data={incomeData} color="#1F41F7" />
+        </InfoColumn>
+        <InfoColumn>
+          <InfoHeader Icon={MdArrowUpward} title="Outgoing" />
+          <InfoValue
+            valueStyle="text-2xl font-semibold"
+            value={(2348.75).toLocaleString("en")}
+          />
+          <VerticalBarChart data={outgoingData} color="#FB3030" />
+        </InfoColumn>
+      </div>
+      {closeEye ? (
+        <ShowMoneyButton Icon={BsEyeFill} />
+      ) : (
+        <ShowMoneyButton Icon={BsEyeSlashFill} />
+      )}
     </div>
   );
 };
