@@ -26,7 +26,7 @@ export const Header = () => {
   const LogoutModal = () => {
     return (
       <div
-        className="items-start flex fixed inset-0 outline-none focus:outline-none"
+        className="items-start flex fixed inset-0 z-10"
         onClick={() => setShowModal(false)}
       >
         <div className="relative w-auto my-6 ml-auto mr-4 mt-16 max-w-3xl">
