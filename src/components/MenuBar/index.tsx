@@ -1,7 +1,12 @@
 import React from "react";
 import { IconType } from "react-icons/lib";
-import { BsHouse, BsGrid, BsGear } from "react-icons/bs";
-import { FaWallet, FaChartBar } from "react-icons/fa";
+import {
+  BsHouse,
+  BsGrid,
+  BsCreditCard,
+  BsClipboardData,
+  BsGear,
+} from "react-icons/bs";
 
 type MenuBarProps = {
   currentPage: string;
@@ -38,12 +43,12 @@ export const MenuBar = ({ currentPage }: MenuBarProps) => {
           onClick={() => {}}
         />
         <MenuButton
-          Icon={FaWallet}
+          Icon={BsCreditCard}
           color={currentPage === "wallet" ? blue : white}
           onClick={() => {}}
         />
         <MenuButton
-          Icon={FaChartBar}
+          Icon={BsClipboardData}
           color={currentPage === "report" ? blue : white}
           onClick={() => {}}
         />
