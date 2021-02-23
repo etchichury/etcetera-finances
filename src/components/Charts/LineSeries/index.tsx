@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  XYPlot,
+  FlexibleXYPlot,
   XAxis,
   YAxis,
   Hint,
@@ -32,9 +32,7 @@ export const LineSeriesChart = ({ data, color }: LineSeriesChartProps) => {
   };
 
   return (
-    <XYPlot
-      height={350}
-      width={500}
+    <FlexibleXYPlot
       xType="ordinal"
       color={color}
       margin={{ left: 50 }}
@@ -60,6 +58,6 @@ export const LineSeriesChart = ({ data, color }: LineSeriesChartProps) => {
         onNearestX={setValue}
         style={{ strokeWidth: 6, stroke: color }}
       />
-    </XYPlot>
+    </FlexibleXYPlot>
   );
 };

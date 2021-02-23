@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  XYPlot,
   XAxis,
   YAxis,
   Hint,
@@ -8,6 +7,7 @@ import {
   HorizontalGridLines,
   VerticalBarSeriesPoint,
   HintProps,
+  FlexibleXYPlot,
 } from "react-vis";
 import "react-vis/dist/style.css";
 
@@ -32,9 +32,7 @@ export const VerticalBarChart = ({ data, color }: VerticalBarChartProps) => {
   };
 
   return (
-    <XYPlot
-      height={350}
-      width={500}
+    <FlexibleXYPlot
       xType="ordinal"
       color={color}
       margin={{ left: 50 }}
@@ -56,6 +54,6 @@ export const VerticalBarChart = ({ data, color }: VerticalBarChartProps) => {
       <HorizontalGridLines />
       {value && mouseOverChart ? <ValueHint /> : null}
       <VerticalBarSeries data={data} barWidth={0.5} onNearestX={setValue} />
-    </XYPlot>
+    </FlexibleXYPlot>
   );
 };
