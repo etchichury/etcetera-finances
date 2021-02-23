@@ -28,9 +28,9 @@ export const Home = () => {
       <MenuBar currentPage="home" />
       <div className="ml-16">
         <BasicInfoCard />
-        <p className="mt-16 ml-10 mb-6 text-3xl font-medium">
+        <h3 className="mt-16 ml-10 mb-6 text-3xl font-medium">
           Latest spendings
-        </p>
+        </h3>
         <Carousel itemsToShow={7} isRTL={false} renderArrow={carouselArrows}>
           <SpendingTile />
           <SpendingTile />
