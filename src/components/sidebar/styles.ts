@@ -27,7 +27,8 @@ export const TitleSection = styled.div`
 `;
 
 export const SectionLink = styled(NavLink)`
-  text-decoration: dashed;
+  text-decoration: none;
+  font-size: 18px;
   color: inherit;
   padding: 14px 10px;
   display: flex;
