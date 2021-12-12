@@ -14,7 +14,7 @@ export const MainContainer = styled.div`
     flex-direction: column;
   }
   > hr {
-    margin: 15px 0px;
+    margin: 20px 0px;
     border: 1px solid #f0f0f0;
   }
 `;
@@ -28,13 +28,16 @@ export const TitleSection = styled.div`
 
 export const SectionLink = styled(NavLink)`
   text-decoration: none;
-  font-size: 18px;
   color: inherit;
   padding: 14px 10px;
   display: flex;
   align-items: center;
   border-radius: 5px;
   margin-bottom: 10px;
+  transition: box-shadow 0.25s, background-color 0.5s;
+  svg {
+    margin-right: 5px;
+  }
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }

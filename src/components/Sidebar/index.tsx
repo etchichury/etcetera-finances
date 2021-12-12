@@ -9,14 +9,19 @@ import {
   SectionLink,
   TitleSection,
 } from "./styles";
+import ProfileMenu from "../ProfileMenu";
 
 const Sidebar = () => {
   return (
     <MainContainer>
       <TitleSection>
         <WalletAlt size={40} />
-        <h1>tcetera</h1>
+        <h1>Etcetera</h1>
       </TitleSection>
+      <ProfileMenu
+        userName="João Soares"
+        userImg="https://i.picsum.photos/id/1011/5472/3648.jpg?hmac=Koo9845x2akkVzVFX3xxAc9BCkeGYA9VRVfLE4f0Zzk"
+      />
       <hr />
       <nav>
         <SectionLink to="expenses">
