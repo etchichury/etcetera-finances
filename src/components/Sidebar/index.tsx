@@ -16,7 +16,7 @@ const Sidebar = () => {
     <MainContainer>
       <TitleSection>
         <WalletAlt size={40} />
-        <h1>Etcetera</h1>
+        <h1>tcetera</h1>
       </TitleSection>
       <ProfileMenu
         userName="João Soares"
