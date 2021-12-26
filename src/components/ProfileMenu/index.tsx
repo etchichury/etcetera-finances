@@ -5,6 +5,7 @@ import {
   ProfileSummaryContainer,
   ProfileImage,
   ProfileOptionsContainer,
+  ProfileButton,
 } from "./styles";
 
 const ProfileMenu = ({
@@ -30,7 +31,8 @@ const ProfileMenu = ({
       {showMenu ? (
         <ProfileOptionsContainer>
           <hr />
-          <h5>Logout</h5>
+          <ProfileButton>Logout</ProfileButton>
+          <ProfileButton>Settings [Coming soon]</ProfileButton>
         </ProfileOptionsContainer>
       ) : null}
     </ProfileContainer>
