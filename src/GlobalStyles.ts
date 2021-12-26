@@ -61,6 +61,10 @@ const GlobalStyle = createGlobalStyle`
       font-size: 1.15rem;
       font-weight: 400;
     }
+    /* Use a more-intuitive box-sizing model */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 `;
 
 export default GlobalStyle;
