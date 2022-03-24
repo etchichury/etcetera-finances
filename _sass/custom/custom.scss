@@ -5,4 +5,10 @@
   ::placeholder {
     color: white;
   }
+  ::-webkit-input-placeholder {
+    color: white;
+  }
+  ::-moz-placeholder {
+    color: white;
+  }
 }
