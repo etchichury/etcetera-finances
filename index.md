@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
+---
+title: Home
+has_children: true
+nav_order: 1
+---
 
-You can use the [editor on GitHub](https://github.com/etchichury/etcetera-finances/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Manage and keep track of your budget.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Description
 
-### Markdown
+## Features
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The system has two simple futures:
 
-```markdown
-Syntax highlighted code block
+### Expenses:
 
-# Header 1
-## Header 2
-### Header 3
+Log all you buy. Overview of what you consume. Don't remember how much you spent in a specif day? Use fast and easy queries, you can search by date, value or product description.
 
-- Bulleted
-- List
+### Budget planning:
 
-1. Numbered
-2. List
+Set budgets that you want to follow and keep track of. Expending to much money buying books? Set a limit on how much you want to expend on it and visualize your financial situation. This will help you not falling into debt.
 
-**Bold** and _Italic_ and `Code` text
+### Future:
 
-[Link](url) and ![Image](src)
-```
+- Budget and expenses integration: add an expense, automatically set the budget where it belongs
+- Dashboard with statistics to help taking decisions and check if you're on the right track
+- Dark theme
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## Design [Figma]
 
-### Jekyll Themes
+I'm not a designer, I don't really know what I'm doing, so I try following what I like: clean and simple user interfaces.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/etchichury/etcetera-finances/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+The pages use simple components, nothing is too complex since I want to build everything from scratch without using a components library. I'm not an experienced software engineer, so building and maintaining a project by my self is already plenty of work.
 
-### Support or Contact
+One could say that the color palette is boring, they wouldn't be wrong. I don't know how to play with colors, I know there is a lot going on here but to avoid loosing focus on what really matters (building the software) I made this decision. I chose this palette using [coolors](https://coolors.co/), so I know I'm not completely wrong with this combination.
+![Palette](https://user-images.githubusercontent.com/29528521/147399128-ca7b43b2-c97b-4a42-8c61-9ebdd3d4befc.png)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Currently there is only a light theme (I think it is easier to make), but one of my goals is to provide a dark theme in the future.
+
+You can check what I designed [here.](https://www.figma.com/file/MATtROumllpDhNhPBvJ7ym/?node-id=6%3A2)
