@@ -1,7 +1,11 @@
 ---
-title: Frontend architecture
+title: Frontend
 parent: Architecture
 nav_order: 1
 ---
 
-# Frontend
+# Overview
+
+# Dependencies
+
+# File structure
