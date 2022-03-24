@@ -7,7 +7,7 @@ has_toc: false
 
 # Architecture
 
-{: .no_toc}
+{: .no_toc }
 
 <details markdown="block">
   <summary>
