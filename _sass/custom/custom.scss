@@ -1,7 +1,8 @@
 .label {
   margin: 0 !important;
 }
-
-::placeholder {
-  color: white;
+.search-input {
+  ::placeholder {
+    color: white;
+  }
 }
