@@ -1,1 +1,4 @@
-theme: jekyll-theme-cayman
+remote_theme: just-the-docs/just-the-docs
+title: Etcetera Finances Docs
+description: Find all information about the project here
+color_scheme: "dark"
