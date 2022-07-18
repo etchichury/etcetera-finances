@@ -14,4 +14,5 @@ export const CustomButton = styled.button<CustomButtonProps>`
     border-radius: 5px;
     color: ${props => props.color};
     cursor: pointer;
+    margin-right: 10px;
 `
