@@ -4,11 +4,13 @@ type CustomButtonProps = {
   background: string
   border: string
   color: string
+  width: number
+  height: number
 }
 
 export const CustomButton = styled.button<CustomButtonProps>`
-    width: 100px;
-    height: 50px;
+    width: ${props => `${props.width}px`};
+    height: ${props => `${props.height}px`};;
     background: ${props => props.background};
     border: ${props => props.border};
     border-radius: 5px;

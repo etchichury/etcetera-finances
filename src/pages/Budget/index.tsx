@@ -8,6 +8,8 @@ const Budget = () => {
         onClick={() => {
           console.log("Accept");
         }}
+        width={150}
+        height={50}
       >
         Accept
       </Button>
@@ -16,6 +18,8 @@ const Budget = () => {
         onClick={() => {
           console.log("Cancel");
         }}
+        width={150}
+        height={50}
       >
         Cancel
       </Button>
@@ -24,6 +28,8 @@ const Budget = () => {
         onClick={() => {
           console.log("Accept");
         }}
+        width={150}
+        height={50}
         disabled
       >
         Accept
