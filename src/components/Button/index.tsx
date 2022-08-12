@@ -13,8 +13,6 @@ export enum ButtonColor {
 type ButtonProps = {
   style: ButtonStyle;
   color: ButtonColor;
-  width: number;
-  height: number;
   onClick: () => void;
   disabled?: boolean;
 };
@@ -22,8 +20,6 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({
   style,
   color,
-  width,
-  height,
   onClick,
   disabled,
   children,
@@ -50,13 +46,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <CustomButton
-      onClick={onClick}
-      {...styles[style]}
-      width={width}
-      height={height}
-      disabled={disabled}
-    >
+    <CustomButton onClick={onClick} {...styles[style]} disabled={disabled}>
       {children}
     </CustomButton>
   );
