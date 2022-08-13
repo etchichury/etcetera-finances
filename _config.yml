@@ -1,6 +1,6 @@
 title: Etcetera Finances
 description: Find all information about the project here
-baseurl: "/etcetera-finances" # the subpath of your site, e.g. /blog
+baseurl: "/etcetera-finances"
 url: "https://etchichury.github.io"
 
 remote_theme: just-the-docs/just-the-docs
