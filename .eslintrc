@@ -3,10 +3,17 @@
     "react-app",
     "plugin:jsx-a11y/recommended",
     "plugin:testing-library/react",
-    "plugin:testing-library/dom"
+    "plugin:testing-library/dom",
+    "plugin:react-hooks/recommended"
   ],
   "root": true,
-  "plugins": ["react", "@typescript-eslint", "testing-library", "jsx-a11y"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "testing-library",
+    "jsx-a11y",
+    "react-hooks"
+  ],
   "parser": "@typescript-eslint/parser",
   "rules": {
     "@typescript-eslint/strict-boolean-expressions": "off",
