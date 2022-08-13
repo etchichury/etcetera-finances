@@ -1,7 +1,19 @@
 {
-  "extends": ["react-app"],
+  "extends": [
+    "react-app",
+    "plugin:jsx-a11y/recommended",
+    "plugin:testing-library/react",
+    "plugin:testing-library/dom",
+    "plugin:react-hooks/recommended"
+  ],
   "root": true,
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "testing-library",
+    "jsx-a11y",
+    "react-hooks"
+  ],
   "parser": "@typescript-eslint/parser",
   "rules": {
     "@typescript-eslint/strict-boolean-expressions": "off",
@@ -11,5 +23,11 @@
         "argsIgnorePattern": "^_"
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ]
 }
