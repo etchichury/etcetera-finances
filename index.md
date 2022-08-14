@@ -18,21 +18,27 @@ Etcetera is composed by to main components: the [React frontend](https://github.
 
 Besides the products itself, this project is also a way to practice my software engineering skills. What I will achive with:
 
-#### Coding
+#### > Coding
 
 Learn more about JavaScript/TypeScript/Python, development libraries (e.g. React and FastAPI) and the web in general.
 
-#### Testing
+#### > Testing
 
 Really important skill for any dev. One might say that personal-use-only projects don't really need tests, but even though I understand the argument, I thinks this one of the best moments to practice and experiment with testing. My intent is to have a well tested project.
 
-#### Writing documentation:
+#### > Accessibility
+
+Even though this is not necessarily a "skill". I think this is an important concern we have to take in mind when developing a software. We want to solve a problem to the maximum number of people we can.
+
+Accessibilility is still not a "first class citzen" in software, I still see a lack of best praticies regarding it in the libraries and other products. Since this is still not as a big concern (devs don't talk as much, so I'm not used to it), and I don't have any disability, I still have to train myself into thinking of it when developing.
+
+#### > Writing documentation:
 
 This is one skill I see some devs thinking it is less important than others, but as I started working in a large company, with thousands of devs, I notice this is as important as coding.
 
 Once you don't have a well documented project, things start getting messy **really** fast. Humans are not hard drives, thus they forget things. Asserting having documents describing processes, decisions, planning, requirements (techincal or not) is a crucial step in software development. This action can define the sucess or falure of a project.
 
-#### Deployment:
+#### > Deployment:
 
 Being able to not just develop a product but release it to the world is a must have skill. As software engineers our job is to solve problems. But what would be the use of it, if the only way of accessing a service would be throgh our local network? Nowadays we have every tool so our software can be easily avaiable from anywhere and anytime, there is no reason to leave it at your local machine.
 
