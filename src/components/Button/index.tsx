@@ -17,6 +17,8 @@ type ButtonProps = {
   disabled?: boolean;
 };
 
+//TODO: instead of color prop, I should  use a boolean
+// flag to denote the variant color
 const Button: React.FC<ButtonProps> = ({
   style,
   color,
