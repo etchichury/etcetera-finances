@@ -1,13 +1,9 @@
-import Button, { ButtonColor, ButtonStyle } from "src/components/Button"
+import Button, { ButtonStyle } from "src/components/Button"
 import { render, screen } from "@testing-library/react"
 
 test("Button component rendering desired content", () => {
   render(
-    <Button
-      style={ButtonStyle.Primary}
-      color={ButtonColor.Blue}
-      onClick={jest.fn()}
-    >
+    <Button style={ButtonStyle.Primary} onClick={jest.fn()}>
       Accept
     </Button>
   )
@@ -17,12 +13,7 @@ test("Button component rendering desired content", () => {
 
 test("Disable button state", () => {
   render(
-    <Button
-      style={ButtonStyle.Primary}
-      color={ButtonColor.Blue}
-      onClick={jest.fn()}
-      disabled
-    >
+    <Button style={ButtonStyle.Primary} onClick={jest.fn()} disabled>
       Accetpt
     </Button>
   )

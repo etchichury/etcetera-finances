@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 type CustomButtonProps = {
-  background: string;
-  border: string;
-  color: string;
-};
+  background: string
+  border: string
+  color: string
+}
 
 export const CustomButton = styled.button<CustomButtonProps>`
   background: ${(props) => props.background};
@@ -12,5 +12,6 @@ export const CustomButton = styled.button<CustomButtonProps>`
   border-radius: 5px;
   color: ${(props) => props.color};
   cursor: ${(props) => (props.disabled ? "default" : "pointer")};
-  margin-right: 10px;
-`;
+  width: 100px;
+  height: 40px;
+`

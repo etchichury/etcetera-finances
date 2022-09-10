@@ -1,40 +1,37 @@
-import Button, { ButtonStyle, ButtonColor } from "src/components/Button";
+import Button, { ButtonStyle } from "src/components/Button"
 
 const Budget = () => {
   return (
     <div style={{ padding: "400px" }}>
       <Button
         style={ButtonStyle.Primary}
-        color={ButtonColor.Blue}
         onClick={() => {
-          console.log("Accept");
+          console.log("Accept")
         }}
       >
         Accept
       </Button>
       <Button
         style={ButtonStyle.Primary}
-        color={ButtonColor.Green}
+        variantColor
         onClick={() => {
-          console.log("Accept");
+          console.log("Accept")
         }}
       >
         Accept
       </Button>
       <Button
         style={ButtonStyle.Secondary}
-        color={ButtonColor.Blue}
         onClick={() => {
-          console.log("Cancel");
+          console.log("Cancel")
         }}
       >
         Cancel
       </Button>
       <Button
         style={ButtonStyle.Primary}
-        color={ButtonColor.Blue}
         onClick={() => {
-          console.log("Accept");
+          console.log("Accept")
         }}
         disabled
       >
@@ -42,16 +39,15 @@ const Budget = () => {
       </Button>
       <Button
         style={ButtonStyle.Secondary}
-        color={ButtonColor.Blue}
         onClick={() => {
-          console.log("Accept");
+          console.log("Accept")
         }}
         disabled
       >
         Cancel
       </Button>
     </div>
-  );
-};
+  )
+}
 
-export default Budget;
+export default Budget
