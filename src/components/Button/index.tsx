@@ -1,5 +1,6 @@
 import { CustomButton } from "./styles"
 
+// TODO: tertiary (blank)
 export enum ButtonStyle {
   Primary,
   Secondary,
