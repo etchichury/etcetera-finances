@@ -14,4 +14,7 @@ export const CustomButton = styled.button<CustomButtonProps>`
   cursor: ${(props) => (props.disabled ? "default" : "pointer")};
   width: 100px;
   height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

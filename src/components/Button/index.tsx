@@ -1,9 +1,9 @@
 import { CustomButton } from "./styles"
 
-// TODO: tertiary (blank)
 export enum ButtonStyle {
   Primary,
   Secondary,
+  Tertiary,
 }
 
 type ButtonProps = {
@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   children,
 }) => {
   const buttonColor = variantColor ? "#8CC7A1" : "#002E5C"
-  const primaryButtonTextColor = variantColor ? "#002E5C" : "white"
+  const primaryButtonTextColor = variantColor ? "black" : "white"
 
   const styles = {
     0: {
@@ -32,7 +32,12 @@ const Button: React.FC<ButtonProps> = ({
     1: {
       background: "transparent",
       border: `solid 3px ${disabled ? "#dfdfdf" : buttonColor}`,
-      color: disabled ? "#a2a2a2" : "#002E5C",
+      color: disabled ? "#a2a2a2" : "black",
+    },
+    2: {
+      background: "transparent",
+      border: "none",
+      color: "black",
     },
   }
 
