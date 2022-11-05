@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { ProgressBarProps } from "."
 
 export const BudgetCardContainer = styled.div`
   display: flex;
@@ -20,17 +19,25 @@ export const Header = styled.div`
   margin-bottom: 20px;
 `
 
-export const ProgressBarContainer = styled.div`
+export const RealProgressBar = styled.progress`
   width: 98%;
   height: 16px;
   align-self: center;
   border: solid 1px;
   border-radius: 12px;
   overflow: hidden;
-`
+  background-color: white;
 
-export const Progress = styled.div<ProgressBarProps>`
-  width: ${(props) => props.progressPercentage}%;
-  height: 16px;
-  background-color: #8CC7A1;
+  ::-webkit-progress-bar {
+    background-color: white;
+  }
+
+  ::-webkit-progress-value {
+    background-color: #8CC7A1;
+  }
+
+  ::-moz-progress-bar {
+    background-color: #8CC7A1;
+  }
+
 `
