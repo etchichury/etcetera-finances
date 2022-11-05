@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { ChevronCompactDown, ChevronCompactUp } from "@styled-icons/bootstrap"
-import { BudgetCardContainer, Header, RealProgressBar } from "./styles"
+import { BudgetCardContainer, Header, ProgressBar } from "./styles"
 import Button, { ButtonStyle } from "../Button"
 
 type BudgetCardProps = {
@@ -27,7 +27,7 @@ const BudgetCard = ({ budgetName, currentProgress }: BudgetCardProps) => {
         {budgetName}
         <MoreInfoButton />
       </Header>
-      <RealProgressBar max={100} value={currentProgress} />
+      <ProgressBar max={100} value={currentProgress} />
     </BudgetCardContainer>
   )
 }

@@ -19,7 +19,7 @@ export const Header = styled.div`
   margin-bottom: 20px;
 `
 
-export const RealProgressBar = styled.progress`
+export const ProgressBar = styled.progress`
   width: 98%;
   height: 16px;
   align-self: center;
