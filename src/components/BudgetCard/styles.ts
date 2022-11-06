@@ -1,6 +1,7 @@
 import styled from "styled-components"
+import Button from 'src/components/Button'
 
-export const BudgetCardContainer = styled.div`
+export const BudgetCardContainer = styled.article`
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -9,6 +10,12 @@ export const BudgetCardContainer = styled.div`
   margin-bottom: 20px;
   width: 350px;
   height: fit-content;
+
+  > hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.20));
+  }
 `
 
 export const Header = styled.div`
@@ -27,6 +34,7 @@ export const ProgressBar = styled.progress`
   border-radius: 12px;
   overflow: hidden;
   background-color: white;
+  margin-bottom: 16px;
 
   ::-webkit-progress-bar {
     background-color: white;
@@ -40,4 +48,42 @@ export const ProgressBar = styled.progress`
     background-color: #8CC7A1;
   }
 
+`
+
+export const BudgetActions = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-top: 12px;
+  gap: 8px;
+`
+
+export const AddExpanseButton = styled(Button)`
+  width: fit-content;
+`
+
+export const ClearAllButton = styled(Button)`
+  padding: 0 8px;
+`
+
+export const Table = styled.table`
+  margin: 0 -4px;
+  margin-top: 12px;
+  border-spacing: 0;
+  border-radius: 8px;
+  border: solid 1px #97EAD2;
+  overflow: hidden;
+  font-size: 1.15rem;
+
+  tr:nth-of-type(odd) {
+    background-color: #97EAD2;
+  }
+
+  td {
+    padding: 4px 16px;
+  }
+
+  td:nth-of-type(even) {
+    text-align: end;
+  }
 `
