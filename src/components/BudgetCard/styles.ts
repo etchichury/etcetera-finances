@@ -21,9 +21,14 @@ export const BudgetCardContainer = styled.article`
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 1.75rem;
   text-transform: uppercase;
   margin-bottom: 20px;
+`
+
+export const ShowMoreButton = styled(Button)<{showMore: boolean}>`
+  transform: rotate(0deg);
+  transition: transform 0.3s cubic-bezier(.25,.46,.45,.94);
+  transform: ${props => (props.showMore ? `rotate(180deg)` : "")};
 `
 
 export const ProgressBar = styled.progress`

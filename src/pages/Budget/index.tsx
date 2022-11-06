@@ -1,12 +1,16 @@
 import BudgetCard from "src/components/BudgetCard"
-import Button, { ButtonStyle } from "src/components/Button"
+import Button, { ButtonAppearance } from "src/components/Button"
 
 const Budget = () => {
   return (
     <div style={{ padding: "100px" }}>
-      <BudgetCard budgetName='Groceries' currentProgress={35} />
+      <BudgetCard
+        budgetName='Groceries'
+        budgetLimit={800}
+        currentProgress={400}
+      />
       <Button
-        style={ButtonStyle.Primary}
+        appearance={ButtonAppearance.Primary}
         onClick={() => {
           console.log("Accept")
         }}

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { ChevronCompactDown, Plus } from "@styled-icons/bootstrap"
 import {
   BudgetCardContainer,
   Header,
@@ -22,7 +23,7 @@ const BudgetCard = ({
   budgetLimit,
   currentProgress,
 }: BudgetCardProps) => {
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMore, setshowMore] = useState(false)
 
   const ExpensesTable = () => (
     <Table>
@@ -48,15 +49,21 @@ const BudgetCard = ({
   return (
     <BudgetCardContainer>
       <Header>
-        {budgetName}
-        <MoreInfoButton />
+        <h3>{budgetName}</h3>
+        <ShowMoreButton
+          appearance={ButtonAppearance.Tertiary}
+          showMore={showMore}
+          onClick={() => setshowMore((prevState) => !prevState)}
+        >
+          <ChevronCompactDown size={40} />
+        </ShowMoreButton>
       </Header>
       <ProgressBar
         aria-label='current budget'
         max={budgetLimit}
         value={currentProgress}
       />
-      {showMenu && (
+      {showMore && (
         <>
           <hr />
           <BudgetActions>
