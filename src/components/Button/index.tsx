@@ -1,24 +1,26 @@
 import { CustomButton } from "./styles"
 
-export enum ButtonStyle {
+export enum ButtonAppearance {
   Primary,
   Secondary,
   Tertiary,
 }
 
 type ButtonProps = {
-  style: ButtonStyle
+  appearance: ButtonAppearance
   onClick: () => void
   variantColor?: boolean
   disabled?: boolean
+  className?: string
 }
 
 const Button: React.FC<ButtonProps> = ({
-  style,
+  appearance,
   variantColor,
   onClick,
   disabled,
   children,
+  className,
 }) => {
   const buttonColor = variantColor ? "#8CC7A1" : "#002E5C"
   const primaryButtonTextColor = variantColor ? "black" : "white"
@@ -31,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
     },
     1: {
       background: "transparent",
-      border: `solid 3px ${disabled ? "#dfdfdf" : buttonColor}`,
+      border: `solid 2px ${disabled ? "#dfdfdf" : buttonColor}`,
       color: disabled ? "#a2a2a2" : "black",
     },
     2: {
@@ -42,7 +44,12 @@ const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <CustomButton onClick={onClick} {...styles[style]} disabled={disabled}>
+    <CustomButton
+      className={className}
+      onClick={onClick}
+      {...styles[appearance]}
+      disabled={disabled}
+    >
       {children}
     </CustomButton>
   )

@@ -12,7 +12,6 @@ export const CustomButton = styled.button<CustomButtonProps>`
   border-radius: 5px;
   color: ${(props) => props.color};
   cursor: ${(props) => (props.disabled ? "default" : "pointer")};
-  width: 100px;
   height: 40px;
   display: flex;
   align-items: center;
