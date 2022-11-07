@@ -92,3 +92,13 @@ export const Table = styled.table`
     text-align: end;
   }
 `
+
+export const ContextualMenuContainer = styled.div<{x: number, y: number}>`
+  background-color: white;
+  border: solid 1px;
+  border-radius: 8px;
+  width: fit-content;
+  position: absolute;
+  top: ${props => `${props.y}px`};
+  left:${props => `${props.x}px`};
+`

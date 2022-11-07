@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { MouseEvent, useState } from "react"
 import { ChevronCompactDown, Plus } from "@styled-icons/bootstrap"
 import {
   BudgetCardContainer,
@@ -9,6 +9,7 @@ import {
   ClearAllButton,
   Table,
   ShowMoreButton,
+  ContextualMenuContainer,
 } from "./styles"
 import { ButtonAppearance } from "src/components/Button"
 
@@ -33,11 +34,30 @@ const BudgetCard = ({
   currentProgress,
 }: BudgetCardProps) => {
   const [showMore, setshowMore] = useState(false)
+  const [showEntryContextualMenu, setShowEntryContextualMenu] = useState(false)
+  const [contextualMenuPos, setContextualMenuPos] = useState({ x: 0, y: 0 })
+
   const budgetEntries: BudgetEntry[] = [
     { description: "Almoço 06/08", value: 123.34 },
     { description: "Mercado 17/12", value: 800.34 },
   ]
 
+  const handleEntryRightClick = (event: MouseEvent<HTMLTableRowElement>) => {
+    event.preventDefault()
+    setContextualMenuPos({ x: event.clientX, y: event.clientY })
+    setShowEntryContextualMenu(!showEntryContextualMenu)
+  }
+
+  const EntryContextualMenu = () => (
+    <ContextualMenuContainer
+      x={contextualMenuPos.x}
+      y={contextualMenuPos.y}
+      onBlur={() => setShowEntryContextualMenu(false)}
+    >
+      <div>Edit</div>
+      <div>Delete</div>
+    </ContextualMenuContainer>
+  )
 
   const ExpensesTable = ({ entries }: TableProps) => (
     <Table>
@@ -49,7 +69,7 @@ const BudgetCard = ({
           >
             <td>{entry.description}</td>
             <td>R$ {entry.value}</td>
-      </tr>
+          </tr>
         ))}
       </tbody>
     </Table>
@@ -92,6 +112,7 @@ const BudgetCard = ({
           <ExpensesTable entries={budgetEntries} />
         </>
       )}
+      {showEntryContextualMenu && <EntryContextualMenu />}
     </BudgetCardContainer>
   )
 }
