@@ -18,31 +18,40 @@ type BudgetCardProps = {
   currentProgress: number
 }
 
+type BudgetEntry = {
+  description: string
+  value: number
+}
+
+type TableProps = {
+  entries: BudgetEntry[]
+}
+
 const BudgetCard = ({
   budgetName,
   budgetLimit,
   currentProgress,
 }: BudgetCardProps) => {
   const [showMore, setshowMore] = useState(false)
+  const budgetEntries: BudgetEntry[] = [
+    { description: "Almoço 06/08", value: 123.34 },
+    { description: "Mercado 17/12", value: 800.34 },
+  ]
 
-  const ExpensesTable = () => (
+
+  const ExpensesTable = ({ entries }: TableProps) => (
     <Table>
-      <tr>
-        <td>06/08</td>
-        <td>R$ 106</td>
+      <tbody>
+        {entries.map((entry) => (
+          <tr
+            onContextMenu={handleEntryRightClick}
+            key={`${entry.description}-tr`}
+          >
+            <td>{entry.description}</td>
+            <td>R$ {entry.value}</td>
       </tr>
-      <tr>
-        <td>06/08</td>
-        <td>R$ 16</td>
-      </tr>
-      <tr>
-        <td>17/04</td>
-        <td>R$ 2324.05</td>
-      </tr>
-      <tr>
-        <td>06/08</td>
-        <td>R$ 106</td>
-      </tr>
+        ))}
+      </tbody>
     </Table>
   )
 
@@ -80,7 +89,7 @@ const BudgetCard = ({
               <Plus size={36} />
             </AddExpanseButton>
           </BudgetActions>
-          <ExpensesTable />
+          <ExpensesTable entries={budgetEntries} />
         </>
       )}
     </BudgetCardContainer>
