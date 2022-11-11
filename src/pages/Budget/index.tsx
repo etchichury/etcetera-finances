@@ -9,12 +9,7 @@ const Budget = () => {
         budgetLimit={800}
         currentProgress={400}
       />
-      <Button
-        appearance={ButtonAppearance.Primary}
-        onClick={() => {
-          console.log("Accept")
-        }}
-      >
+      <Button appearance={ButtonAppearance.Primary} onClick={() => {}}>
         Accept
       </Button>
     </div>

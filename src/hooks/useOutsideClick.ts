@@ -5,7 +5,6 @@ const useOutsideClick = <T extends HTMLElement = HTMLElement>(
   handlerCallback: (event: Event) => void
 ) => {
   useEffect(() => {
-    console.log(">> effect, ", ref)
     const listener = (event: Event) => {
       if (
         !ref.current ||
