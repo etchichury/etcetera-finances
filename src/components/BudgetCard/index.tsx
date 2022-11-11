@@ -1,4 +1,4 @@
-import { MouseEvent, useState } from "react"
+import { MouseEvent, useRef, useState } from "react"
 import { ChevronCompactDown, Plus } from "@styled-icons/bootstrap"
 import {
   BudgetCardContainer,
@@ -12,6 +12,7 @@ import {
   ContextualMenuContainer,
 } from "./styles"
 import { ButtonAppearance } from "src/components/Button"
+import useOutsideClick from "src/hooks/useOutsideClick"
 
 type BudgetCardProps = {
   budgetName: string
@@ -37,10 +38,18 @@ const BudgetCard = ({
   const [showEntryContextualMenu, setShowEntryContextualMenu] = useState(false)
   const [contextualMenuPos, setContextualMenuPos] = useState({ x: 0, y: 0 })
 
+  const contextualMenuRef = useRef<HTMLDivElement>(null)
+
   const budgetEntries: BudgetEntry[] = [
     { description: "Almoço 06/08", value: 123.34 },
     { description: "Mercado 17/12", value: 800.34 },
   ]
+
+  const handleOutsideClick = (_event: Event) => {
+    setShowEntryContextualMenu(false)
+  }
+
+  useOutsideClick<HTMLDivElement>(contextualMenuRef, handleOutsideClick)
 
   const handleEntryRightClick = (event: MouseEvent<HTMLTableRowElement>) => {
     event.preventDefault()
@@ -53,6 +62,7 @@ const BudgetCard = ({
       x={contextualMenuPos.x}
       y={contextualMenuPos.y}
       onBlur={() => setShowEntryContextualMenu(false)}
+      ref={contextualMenuRef}
     >
       <div>Edit</div>
       <div>Delete</div>
