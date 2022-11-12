@@ -1,3 +1,4 @@
+import { ReactNode } from "react"
 import { CustomButton } from "./styles"
 
 export enum ButtonAppearance {
@@ -9,13 +10,14 @@ export enum ButtonAppearance {
 type ButtonProps = {
   appearance: ButtonAppearance
   onClick: () => void
+  children: ReactNode
   variantColor?: boolean
   disabled?: boolean
   className?: string
   ariaLabel?: string
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   appearance,
   variantColor,
   onClick,
@@ -23,6 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   children,
   className,
   ariaLabel,
+}: ButtonProps) => {
   const buttonColor = variantColor ? "#8CC7A1" : "#002E5C"
   const primaryButtonTextColor = variantColor ? "black" : "white"
 
