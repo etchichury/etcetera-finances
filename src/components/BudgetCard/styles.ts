@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Button from 'src/components/Button'
+import Button from "src/components/Button"
 
 export const BudgetCardContainer = styled.article`
   display: flex;
@@ -14,7 +14,12 @@ export const BudgetCardContainer = styled.article`
   > hr {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.20));
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.2)
+    );
   }
 `
 
@@ -25,10 +30,10 @@ export const Header = styled.div`
   margin-bottom: 20px;
 `
 
-export const ShowMoreButton = styled(Button)<{showMore: boolean}>`
+export const ShowMoreButton = styled(Button)<{ showMore: boolean }>`
   transform: rotate(0deg);
-  transition: transform 0.3s cubic-bezier(.25,.46,.45,.94);
-  transform: ${props => (props.showMore ? `rotate(180deg)` : "")};
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: ${(props) => (props.showMore ? `rotate(180deg)` : "")};
 `
 
 export const ProgressBar = styled.progress`
@@ -46,13 +51,12 @@ export const ProgressBar = styled.progress`
   }
 
   ::-webkit-progress-value {
-    background-color: #8CC7A1;
+    background-color: #8cc7a1;
   }
 
   ::-moz-progress-bar {
-    background-color: #8CC7A1;
+    background-color: #8cc7a1;
   }
-
 `
 
 export const BudgetActions = styled.div`
@@ -76,12 +80,12 @@ export const Table = styled.table`
   margin-top: 12px;
   border-spacing: 0;
   border-radius: 8px;
-  border: solid 1px #97EAD2;
+  border: solid 1px #97ead2;
   overflow: hidden;
   font-size: 1.15rem;
 
   tr:nth-of-type(odd) {
-    background-color: #97EAD2;
+    background-color: #97ead2;
   }
 
   td {
@@ -93,12 +97,22 @@ export const Table = styled.table`
   }
 `
 
-export const ContextualMenuContainer = styled.div<{x: number, y: number}>`
+export const ContextualMenuContainer = styled.div<{ x: number; y: number }>`
   background-color: white;
-  border: solid 1px;
+  border: solid 1px #97ead2;
   border-radius: 8px;
   width: fit-content;
   position: absolute;
-  top: ${props => `${props.y}px`};
-  left:${props => `${props.x}px`};
+  top: ${(props) => `${props.y}px`};
+  left: ${(props) => `${props.x}px`};
+  overflow: hidden;
+
+  > div {
+    cursor: pointer;
+    padding: 8px 12px;
+
+    &:hover {
+      background: #8cc7a1;
+    }
+  }
 `
