@@ -1,7 +1,7 @@
 import Button, { ButtonAppearance } from "src/components/Button"
 import { render, screen } from "@testing-library/react"
 
-test("Button component rendering desired content", () => {
+test("Button renders desired content", () => {
   render(
     <Button appearance={ButtonAppearance.Primary} onClick={jest.fn()}>
       Accept
