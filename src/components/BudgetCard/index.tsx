@@ -129,6 +129,7 @@ const BudgetCard = ({
           appearance={ButtonAppearance.Tertiary}
           showMore={showMore}
           onClick={() => setshowMore((prevState) => !prevState)}
+          ariaLabel={`${showMore ? "collapse" : "expand"} content`}
         >
           <ChevronCompactDown size={40} />
         </ShowMoreButton>
@@ -151,6 +152,7 @@ const BudgetCard = ({
             <AddExpanseButton
               appearance={ButtonAppearance.Secondary}
               onClick={() => {}}
+              ariaLabel='add entry'
             >
               <Plus size={36} />
             </AddExpanseButton>

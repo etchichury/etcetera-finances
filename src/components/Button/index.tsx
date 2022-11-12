@@ -12,6 +12,7 @@ type ButtonProps = {
   variantColor?: boolean
   disabled?: boolean
   className?: string
+  ariaLabel?: string
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -21,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   children,
   className,
-}) => {
+  ariaLabel,
   const buttonColor = variantColor ? "#8CC7A1" : "#002E5C"
   const primaryButtonTextColor = variantColor ? "black" : "white"
 
@@ -49,6 +50,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       {...styles[appearance]}
       disabled={disabled}
+      aria-label={ariaLabel}
     >
       {children}
     </CustomButton>
