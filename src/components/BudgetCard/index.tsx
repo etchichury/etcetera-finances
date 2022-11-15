@@ -71,9 +71,11 @@ const BudgetCard = ({
   const EntryContextualMenu = () => {
     const handleMenuItemClick = (action: string) => {
       setShowEntryContextualMenu(false)
-      if (action === "edit") {
-      }
-      if (action === "delete") {
+      switch (action) {
+        case "edit":
+          return
+        case "delete":
+          return
       }
     }
 
