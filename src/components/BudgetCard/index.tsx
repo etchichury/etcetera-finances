@@ -67,9 +67,9 @@ const BudgetCard = ({
       setShowEntryContextualMenu(false)
       switch (action) {
         case "edit":
-          return
+          return selectedEntry
         case "delete":
-          return
+          return selectedEntry
       }
     }
 
