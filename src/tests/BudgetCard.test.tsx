@@ -2,7 +2,16 @@ import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import BudgetCard from "src/components/BudgetCard"
 
-test("BudgetCard collapsed renders desired content", () => {
+test("renders desired content when collapsed", () => {
+  render(<BudgetCard budgetName='Groceries' budgetLimit={800} />)
+
+  expect(
+    screen.getByRole("heading", { name: /groceries/i })
+  ).toBeInTheDocument()
+  expect(screen.getByRole("heading", { name: "R$ 800" })).toBeInTheDocument()
+})
+
+test("renders current progress when provided", () => {
   render(
     <BudgetCard
       budgetName='Groceries'
@@ -11,12 +20,11 @@ test("BudgetCard collapsed renders desired content", () => {
     />
   )
 
-  expect(screen.getByRole("heading")).toHaveTextContent(/groceries/i)
-  expect(screen.getByText(/R$ 800/i)).toBeInTheDocument()
-  expect(screen.getByText(/R$ 300/i)).toBeInTheDocument()
+  expect(screen.getByRole("heading", { name: "R$ 800" })).toBeInTheDocument()
+  expect(screen.getByRole("heading", { name: "R$ 300" })).toBeInTheDocument()
 })
 
-test("BudgetCard renders desired content when expanded", async () => {
+test("renders desired content when expanded", async () => {
   const user = userEvent.setup()
   render(
     <BudgetCard
