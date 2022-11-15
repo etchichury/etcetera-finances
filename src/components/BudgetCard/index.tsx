@@ -117,6 +117,7 @@ const BudgetCard = ({
     </Table>
   )
 
+  //TODO: style warning
   const NoExpensesWarning = () => <div>No expenses for this Budget</div>
 
   return (
