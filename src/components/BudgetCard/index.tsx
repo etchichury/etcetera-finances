@@ -20,25 +20,24 @@ import {
 import { ButtonAppearance } from "src/components/Button"
 import useOutsideClick from "src/hooks/useOutsideClick"
 
-type BudgetCardProps = {
-  budgetName: string
-  budgetLimit: number
-  currentProgress: number
-}
-
 type BudgetEntry = {
   id: number
   description: string
   value: number
 }
 
+type BudgetCardProps = {
+  budgetName: string
+  budgetLimit: number
   currentProgress?: number
+  expenses?: BudgetEntry[]
 }
 
 const BudgetCard = ({
   budgetName,
   budgetLimit,
   currentProgress,
+  expenses,
 }: BudgetCardProps) => {
   const [showMore, setshowMore] = useState(false)
   const [showEntryContextualMenu, setShowEntryContextualMenu] = useState(false)
@@ -47,12 +46,7 @@ const BudgetCard = ({
 
   const contextualMenuRef = useRef<HTMLDivElement>(null)
 
-  const budgetEntries: BudgetEntry[] = [
-    { id: 1, description: "Almoço 06/08", value: 123.34 },
-    { id: 2, description: "Mercado 17/12", value: 800.34 },
-  ]
-
-  const handleOutsideClick = (_event: Event) => {
+  const handleOutsideClick = () => {
     setShowEntryContextualMenu(false)
   }
 
@@ -107,10 +101,10 @@ const BudgetCard = ({
     )
   }
 
-  const ExpensesTable = ({ entries }: TableProps) => (
+  const ExpensesTable = () => (
     <Table>
       <tbody>
-        {entries.map((entry) => (
+        {expenses!.map((entry) => (
           <tr
             onContextMenu={(event) => handleEntryRightClick(event, entry.id)}
             key={`${entry.description}-tr`}
@@ -122,6 +116,8 @@ const BudgetCard = ({
       </tbody>
     </Table>
   )
+
+  const NoExpensesWarning = () => <div>No expenses for this Budget</div>
 
   return (
     <BudgetCardContainer>
@@ -163,7 +159,7 @@ const BudgetCard = ({
               <Plus size={36} />
             </AddExpanseButton>
           </BudgetActions>
-          <ExpensesTable entries={budgetEntries} />
+          {expenses?.length ? <ExpensesTable /> : <NoExpensesWarning />}
         </>
       )}
       {showEntryContextualMenu && <EntryContextualMenu />}
