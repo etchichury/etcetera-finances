@@ -15,6 +15,7 @@ import {
   Table,
   ShowMoreButton,
   ContextualMenuContainer,
+  BudgetTextualProgress,
 } from "./styles"
 import { ButtonAppearance } from "src/components/Button"
 import useOutsideClick from "src/hooks/useOutsideClick"
@@ -31,8 +32,7 @@ type BudgetEntry = {
   value: number
 }
 
-type TableProps = {
-  entries: BudgetEntry[]
+  currentProgress?: number
 }
 
 const BudgetCard = ({
@@ -134,6 +134,10 @@ const BudgetCard = ({
           <ChevronCompactDown size={40} />
         </ShowMoreButton>
       </Header>
+      <BudgetTextualProgress currentProgress={!!currentProgress}>
+        {currentProgress && <h4>R$ {currentProgress}</h4>}
+        <h4>R$ {budgetLimit}</h4>
+      </BudgetTextualProgress>
       <ProgressBar
         aria-label='current budget'
         max={budgetLimit}

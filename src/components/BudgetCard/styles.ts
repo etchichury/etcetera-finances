@@ -36,6 +36,14 @@ export const ShowMoreButton = styled(Button)<{ showMore: boolean }>`
   transform: ${(props) => (props.showMore ? `rotate(180deg)` : "")};
 `
 
+export const BudgetTextualProgress = styled.div<{ currentProgress: boolean }>`
+  display: flex;
+  flex-direction: row;
+  justify-content: ${(props) =>
+    props.currentProgress ? "space-between" : "center"};
+  padding: 0 8px;
+`
+
 export const ProgressBar = styled.progress`
   width: 98%;
   height: 16px;
