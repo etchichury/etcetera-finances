@@ -16,6 +16,7 @@ import {
   ShowMoreButton,
   ContextualMenuContainer,
   BudgetTextualProgress,
+  NoExpensesWarningContainer,
 } from "./styles"
 import { ButtonAppearance } from "src/components/Button"
 import useOutsideClick from "src/hooks/useOutsideClick"
@@ -118,7 +119,11 @@ const BudgetCard = ({
   )
 
   //TODO: style warning
-  const NoExpensesWarning = () => <div>No expenses for this Budget</div>
+  const NoExpensesWarning = () => (
+    <NoExpensesWarningContainer>
+      <h5>No expenses for this Budget</h5>
+    </NoExpensesWarningContainer>
+  )
 
   return (
     <BudgetCardContainer>

@@ -83,6 +83,16 @@ export const ClearAllButton = styled(Button)`
   padding: 0 8px;
 `
 
+export const NoExpensesWarningContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  border: solid 1px;
+  border-radius: 8px;
+  padding: 4px;
+  color: #e71f1b;
+`
+
 export const Table = styled.table`
   margin: 0 -4px;
   margin-top: 12px;
