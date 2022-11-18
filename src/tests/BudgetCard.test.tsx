@@ -62,3 +62,19 @@ test("renders contextual menu when right clicking table cell", async () => {
   expect(screen.getByRole("menuitem", { name: /edit/i })).toBeInTheDocument()
   expect(screen.getByRole("menuitem", { name: /delete/i })).toBeInTheDocument()
 })
+
+test("show warning message when no expenses are present", async () => {
+  const user = userEvent.setup()
+  render(
+    <BudgetCard
+      budgetName='Groceries'
+      budgetLimit={800}
+      currentProgress={300}
+      expenses={[]}
+    />
+  )
+
+  await user.click(screen.getByRole("button", { name: /expand content/i }))
+
+  expect(screen.getByText(/no expenses for this budget/i))
+})
