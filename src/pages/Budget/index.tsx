@@ -1,5 +1,7 @@
 import BudgetCard from "src/components/BudgetCard"
 import Button, { ButtonAppearance } from "src/components/Button"
+import { Plus } from "styled-icons/bootstrap"
+import { BudgetGrid, BudgetPageContainer } from "./styles"
 
 type BudgetEntry = {
   id: number
@@ -14,17 +16,42 @@ const Budget = () => {
   ]
 
   return (
-    <div style={{ padding: "100px" }}>
-      <BudgetCard
-        budgetName='Groceries'
-        budgetLimit={800}
-        currentProgress={400}
-        expenses={budgetEntries}
-      />
+    <BudgetPageContainer>
+      <h1>Budget planning</h1>
+      <h5>
+        Add, edit and delete your expenses. Here you will see on what you’ve
+        being expending, dates and costs of each item you add.{" "}
+      </h5>
+      <BudgetGrid>
+        <BudgetCard
+          budgetName='Groceries'
+          budgetLimit={800}
+          currentProgress={400}
+          expenses={budgetEntries}
+        />
+        <BudgetCard
+          budgetName='Cinema'
+          budgetLimit={100}
+          currentProgress={37}
+          expenses={budgetEntries}
+        />
+        <BudgetCard
+          budgetName='Streaming'
+          budgetLimit={500}
+          currentProgress={430}
+          expenses={budgetEntries}
+        />
+        <BudgetCard
+          budgetName='Comics'
+          budgetLimit={200}
+          currentProgress={56}
+          expenses={budgetEntries}
+        />
+      </BudgetGrid>
       <Button appearance={ButtonAppearance.Primary} onClick={() => {}}>
-        Accept
+        <Plus size={42} />
       </Button>
-    </div>
+    </BudgetPageContainer>
   )
 }
 

@@ -7,8 +7,6 @@ export const BudgetCardContainer = styled.article`
   border-radius: 10px;
   padding: 18px;
   box-shadow: 0 0px 8px hsl(0deg 0% 0% / 0.075);
-  margin-bottom: 20px;
-  width: 350px;
   height: fit-content;
 
   > hr {
