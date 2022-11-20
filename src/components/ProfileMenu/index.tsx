@@ -1,4 +1,9 @@
-import { ChevronCompactDown, ChevronCompactUp } from "@styled-icons/bootstrap"
+import {
+  ChevronCompactDown,
+  ChevronCompactUp,
+  BoxArrowLeft,
+  GearFill,
+} from "@styled-icons/bootstrap"
 import { useState } from "react"
 import {
   ProfileContainer,
@@ -18,7 +23,7 @@ const ProfileMenu = ({
   const [showMore, setshowMore] = useState(false)
 
   return (
-    <ProfileContainer>
+    <ProfileContainer expended={showMore}>
       <ProfileSummaryContainer onClick={() => setshowMore(!showMore)}>
         <ProfileImage src={userImg} alt='user' width={45} height={45} />
         <h4>{userName}</h4>
@@ -31,8 +36,14 @@ const ProfileMenu = ({
       {showMore ? (
         <ProfileOptionsContainer>
           <hr />
-          <ProfileButton>Logout</ProfileButton>
-          <ProfileButton>Settings [Coming soon]</ProfileButton>
+          <ProfileButton>
+            <BoxArrowLeft size={24} />
+            <h5>Logout</h5>
+          </ProfileButton>
+          <ProfileButton>
+            <GearFill size={24} />
+            <h5>Settings [Coming soon]</h5>
+          </ProfileButton>
         </ProfileOptionsContainer>
       ) : null}
     </ProfileContainer>

@@ -4,14 +4,19 @@ export const BudgetPageContainer = styled.div`
   padding: 18px 36px;
   position: relative;
   width: 100%;
+  overflow: auto;
 
   > button {
-    position: absolute;
-    top: 90%;
-    left: 92%;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
     width: 50px;
     height: 50px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 60px;
   }
 `
 
