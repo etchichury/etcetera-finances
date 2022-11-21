@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
     /*
@@ -42,29 +42,29 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 600;
     }
     h2 {
-      font-size: 2.15rem;
+      font-size: 1.75rem;
       font-weight: 500;
     }
     h3 {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       font-weight: 400;
     }
     h4 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 300;
     }
     h5 {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 400;
     }
     nav > a {
-      font-size: 1.15rem;
+      font-size: 1rem;
       font-weight: 400;
     }
     /* Use a more-intuitive box-sizing model */
     *, *::before, *::after {
       box-sizing: border-box;
     }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle
