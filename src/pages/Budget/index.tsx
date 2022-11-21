@@ -17,10 +17,10 @@ const Budget = () => {
 
   return (
     <BudgetPageContainer>
-      <h1>Budget planning</h1>
+      <h2>Budget planning</h2>
       <h5>
-        Add, edit and delete your expenses. Here you will see on what you’ve
-        being expending, dates and costs of each item you add.{" "}
+        Add, edit and delete your expenses. Here you will see on what you've
+        being expending, dates and costs of each item you add.
       </h5>
       <BudgetGrid>
         <BudgetCard
