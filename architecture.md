@@ -33,7 +33,7 @@ responds with a proper response.
 - API client: Postman
 - OS/Shell: Pop!_OS/zsh
 - Main browser: Firefox [Latest]
-- Machines: ThinkPad T480 & Desktop Ryzen5 3600XT | 16GB RAM | RTX 2060
+- Machines: ThinkPad T480 & Desktop Ryzen5 3600XT / 16GB RAM / RTX 2060
 
 ### Tech Stack
 - Frontend: React/TypeScript
