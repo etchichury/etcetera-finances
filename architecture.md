@@ -42,4 +42,5 @@ responds with a proper response.
 {: .note-title }
 > Note
 >
-> A more detailed description of the stacks can be found in the respective architecture pages
+> A more detailed description of the stacks can be found in the respective 
+> architecture pages
