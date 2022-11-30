@@ -39,7 +39,7 @@ responds with a proper response.
 - Frontend: React/TypeScript
 - Backend: FastAPI/Python
 
-{: .note-title }
+{: .note }
 > Note
 >
 > A more detailed description of the stacks can be found in the respective 
