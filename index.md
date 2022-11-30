@@ -12,7 +12,9 @@ This is a personal project, and made for my use cases. I always noticed that I w
 There is quite a lot I want to do in this project, but I will try to be as simple as I can, at least for the first MVP. I know that one of the reasons a lot of personal projects dies is due to they being too complex and neverending, so I have to whatch out for this.
 You can check the [Features](features.md) section to see the list.
 
-Etcetera is composed by to main components: the [React frontend](https://github.com/etchichury/etcetera-finances/) and the FastAPI backend (TBD). This documentation will have information about both of them.
+Etcetera is composed by to main components: the [React frontend](https://github.com/etchichury/etcetera-finances/) and the [FastAPI backend](https://github.com/etchichury/etcetera-backend/). This documentation will have information about both of them.
+
+---
 
 ### Goals
 
