@@ -6,5 +6,5 @@ export const fetchBudgets = async () => {
 
   if (!resp.ok) throw resp
 
-  return resp.json() as Promise<T>
+  return resp.json()
 }

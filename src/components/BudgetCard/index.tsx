@@ -42,25 +42,30 @@ const BudgetCard = ({
 }: BudgetCardProps) => {
   const [showMore, setshowMore] = useState(false)
   const [showEntryContextualMenu, setShowEntryContextualMenu] = useState(false)
-  const [selectedEntry, setSelectedEntry] = useState<number>()
+  const [selectedEntry, setSelectedEntry] = useState<BudgetEntry>()
   const [contextualMenuPos, setContextualMenuPos] = useState({ x: 0, y: 0 })
 
   const contextualMenuRef = useRef<HTMLDivElement>(null)
 
-  const handleOutsideClick = () => {
+  useOutsideClick<HTMLDivElement>(contextualMenuRef, () => {
+    setContextualMenuPos({ x: 0, y: 0 })
     setShowEntryContextualMenu(false)
-  }
-
-  useOutsideClick<HTMLDivElement>(contextualMenuRef, handleOutsideClick)
+  })
 
   const handleEntryRightClick = (
     event: MouseEvent<HTMLTableRowElement>,
-    entryId: number
+    entry: BudgetEntry
   ) => {
     event.preventDefault()
-    setContextualMenuPos({ x: event.clientX, y: event.clientY })
-    setShowEntryContextualMenu(!showEntryContextualMenu)
-    setSelectedEntry(entryId)
+
+    const xPositionOffset = window.innerWidth < 1100 ? 90 : 350
+    setContextualMenuPos({
+      x: event.clientX - xPositionOffset,
+      y: event.clientY,
+    })
+
+    setShowEntryContextualMenu(true)
+    setSelectedEntry(entry)
   }
 
   const EntryContextualMenu = () => {
@@ -107,7 +112,7 @@ const BudgetCard = ({
       <tbody>
         {expenses!.map((entry) => (
           <tr
-            onContextMenu={(event) => handleEntryRightClick(event, entry.id)}
+            onContextMenu={(event) => handleEntryRightClick(event, entry)}
             key={`${entry.description}-tr`}
           >
             <td>{entry.description}</td>
