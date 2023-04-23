@@ -46,7 +46,6 @@ const BudgetCard = ({
   const [contextualMenuPos, setContextualMenuPos] = useState({ x: 0, y: 0 })
 
   const contextualMenuRef = useRef<HTMLDivElement>(null)
-
   useOutsideClick<HTMLDivElement>(contextualMenuRef, () => {
     setContextualMenuPos({ x: 0, y: 0 })
     setShowEntryContextualMenu(false)
