@@ -1,7 +1,7 @@
-import BudgetCard from "src/components/BudgetCard"
-import Button, { ButtonAppearance } from "src/components/Button"
 import { Plus } from "styled-icons/bootstrap"
+import Button, { ButtonAppearance } from "src/components/Button"
 import { BudgetGrid, BudgetPageContainer } from "./styles"
+import BudgetCard from "./components/BudgetCard"
 
 type BudgetEntry = {
   id: number
