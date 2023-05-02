@@ -1,3 +1,5 @@
+import { CustomCheckbox } from "./styles"
+
 type CheckboxProps = {
   checkboxId: string
   label: string
@@ -6,9 +8,8 @@ type CheckboxProps = {
 const Checkbox = ({ checkboxId, label }: CheckboxProps) => {
   return (
     <div>
-      <input type='checkbox' id={checkboxId}>
-        <label htmlFor={checkboxId}>{label}</label>
-      </input>
+      <CustomCheckbox type='checkbox' id={checkboxId} />
+      <label htmlFor={checkboxId}>{label}</label>
     </div>
   )
 }
