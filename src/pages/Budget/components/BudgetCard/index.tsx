@@ -18,7 +18,6 @@ import {
   BudgetTextualProgress,
   NoExpensesWarningContainer,
 } from "./styles"
-import { ButtonAppearance } from "src/components/Button"
 import useOutsideClick from "src/hooks/useOutsideClick"
 
 type BudgetEntry = {
@@ -134,10 +133,10 @@ const BudgetCard = ({
       <Header>
         <h3>{budgetName}</h3>
         <ShowMoreButton
-          appearance={ButtonAppearance.Tertiary}
+          appearance='tertiary'
           showMore={showMore}
           onClick={() => setshowMore((prevState) => !prevState)}
-          ariaLabel={`${showMore ? "collapse" : "expand"} content`}
+          aria-label={`${showMore ? "collapse" : "expand"} content`}
         >
           <ChevronCompactDown size={40} />
         </ShowMoreButton>
@@ -155,16 +154,13 @@ const BudgetCard = ({
         <>
           <hr />
           <BudgetActions>
-            <ClearAllButton
-              appearance={ButtonAppearance.Secondary}
-              onClick={() => {}}
-            >
+            <ClearAllButton appearance='secondary' onClick={() => {}}>
               Clear All
             </ClearAllButton>
             <AddExpanseButton
-              appearance={ButtonAppearance.Secondary}
+              appearance='secondary'
               onClick={() => {}}
-              ariaLabel='add entry'
+              aria-label='add entry'
             >
               <Plus size={36} />
             </AddExpanseButton>
