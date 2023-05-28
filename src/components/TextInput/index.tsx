@@ -1,27 +1,22 @@
-import { ChangeEventHandler } from "react"
+import { ComponentProps, ForwardedRef } from "react"
 import { Input } from "./styles"
 
 type TextInputProps = {
-  value: string
-  onChange: ChangeEventHandler<HTMLInputElement>
-  placeholder: string
-  pattern?: string
-}
+  label: string
+  ref?: ForwardedRef<HTMLInputElement>
+} & ComponentProps<"input">
 
-const TextInput = ({
-  value,
-  onChange,
-  placeholder,
-  pattern,
-}: TextInputProps) => {
+const TextInput = (props: TextInputProps) => {
   return (
-    <Input
-      type='text'
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      pattern={pattern}
-    />
+    <div>
+      <label htmlFor={props.id}>{props.label}</label>
+      <Input
+        type='text'
+        placeholder={props.label}
+        aria-label={props.label}
+        {...props}
+      />
+    </div>
   )
 }
 

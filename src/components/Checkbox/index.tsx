@@ -1,17 +1,18 @@
+import { ComponentProps, ForwardedRef, forwardRef } from "react"
 import { CustomCheckbox } from "./styles"
 
 type CheckboxProps = {
-  checkboxId: string
   label: string
-}
+  ref?: ForwardedRef<HTMLInputElement>
+} & ComponentProps<"input">
 
-const Checkbox = ({ checkboxId, label }: CheckboxProps) => {
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
   return (
     <div>
-      <CustomCheckbox type='checkbox' id={checkboxId} />
-      <label htmlFor={checkboxId}>{label}</label>
+      <CustomCheckbox type='checkbox' id={props.id} ref={ref} {...props} />
+      <label htmlFor={props.id}>{props.label}</label>
     </div>
   )
-}
+})
 
 export default Checkbox

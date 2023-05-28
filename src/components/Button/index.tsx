@@ -1,46 +1,31 @@
-import { ReactNode } from "react"
+import { ComponentProps, ForwardedRef } from "react"
 import { CustomButton } from "./styles"
 
-export enum ButtonAppearance {
-  Primary,
-  Secondary,
-  Tertiary,
-}
-
 type ButtonProps = {
-  appearance: ButtonAppearance
-  onClick: () => void
-  children: ReactNode
+  appearance: "primary" | "secondary" | "tertiary"
   variantColor?: boolean
-  disabled?: boolean
-  className?: string
-  ariaLabel?: string
-}
+  // this casting solves a typing conflict between native and styled ref type
+  ref?: ForwardedRef<HTMLButtonElement>
+} & ComponentProps<"button">
 
-const Button = ({
-  appearance,
-  variantColor,
-  onClick,
-  disabled,
-  children,
-  className,
-  ariaLabel,
-}: ButtonProps) => {
+const Button = (props: ButtonProps) => {
+  const { variantColor, disabled, appearance, children } = props
+
   const buttonColor = variantColor ? "#8CC7A1" : "#002E5C"
   const primaryButtonTextColor = variantColor ? "black" : "white"
 
-  const styles = {
-    0: {
+  const buttonStyles = {
+    primary: {
       background: disabled ? "#dfdfdf" : buttonColor,
       border: "inherit",
       color: disabled ? "#a2a2a2" : primaryButtonTextColor,
     },
-    1: {
+    secondary: {
       background: "transparent",
       border: `solid 2px ${disabled ? "#dfdfdf" : buttonColor}`,
       color: disabled ? "#a2a2a2" : "black",
     },
-    2: {
+    tertiary: {
       background: "transparent",
       border: "none",
       color: "black",
@@ -48,13 +33,7 @@ const Button = ({
   }
 
   return (
-    <CustomButton
-      className={className}
-      onClick={onClick}
-      {...styles[appearance]}
-      disabled={disabled}
-      aria-label={ariaLabel}
-    >
+    <CustomButton {...props} style={buttonStyles[appearance]}>
       {children}
     </CustomButton>
   )

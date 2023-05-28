@@ -1,18 +1,10 @@
 import styled from "styled-components"
 
-type CustomButtonProps = {
-  background: string
-  border: string
-  color: string
-}
-
-export const CustomButton = styled.button<CustomButtonProps>`
-  background: ${(props) => props.background};
-  border: ${(props) => props.border};
-  border-radius: 5px;
-  color: ${(props) => props.color};
+export const CustomButton = styled.button`
+  border-radius: 10px;
   cursor: ${(props) => (props.disabled ? "default" : "pointer")};
-  height: 40px;
+  height: 50px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

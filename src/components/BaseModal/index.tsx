@@ -1,18 +1,19 @@
-import { ReactNode, useRef } from "react"
-import useOutsideClick from "src/hooks/useOutsideClick"
+import { ReactNode, forwardRef } from "react"
+import { DialogModal } from "./styles"
 
 type BaseModalProps = {
   children: ReactNode
-  setShow: (value: boolean) => void
+  show?: boolean
 }
 
-const BaseModal = ({ children, setShow }: BaseModalProps) => {
-  const modalRef = useRef<HTMLDivElement>(null)
-  useOutsideClick(modalRef, () => {
-    setShow(false)
-  })
-
-  return <div>{children}</div>
-}
+const BaseModal = forwardRef<HTMLDialogElement, BaseModalProps>(
+  (props, ref) => {
+    return (
+      <DialogModal open={props.show} ref={ref} {...props}>
+        {props.children}
+      </DialogModal>
+    )
+  }
+)
 
 export default BaseModal

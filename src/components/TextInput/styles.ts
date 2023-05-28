@@ -2,8 +2,8 @@ import styled from "styled-components"
 
 export const Input = styled.input`
   height: 50px;
-  width: 450px;
-  border: 1px solid #8cc7a1;
+  width: 100%;
+  border: 2px solid #8cc7a1;
   border-radius: 10px;
   padding-left: 10px;
   font-size: 1.5rem;
@@ -14,10 +14,10 @@ export const Input = styled.input`
   }
 
   &:focus-visible {
-    outline: 2px solid #8cc7a1;
+    outline: 1px solid #8cc7a1;
   }
 
   &:invalid {
-    outline: 2px solid #dc5d3c;
+    outline: 1px solid #dc5d3c;
   }
 `
