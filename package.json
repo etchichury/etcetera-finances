@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "description": "Manage and track your budget",
   "license": "GPLv3",
-  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
