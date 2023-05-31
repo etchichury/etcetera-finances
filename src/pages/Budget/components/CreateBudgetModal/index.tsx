@@ -4,14 +4,14 @@ import Button from "src/components/Button"
 import Checkbox from "src/components/Checkbox"
 import TextInput from "src/components/TextInput"
 import { BudgetForm, FormButtonsContainer, FormInputsContainer } from "./styles"
-import { useInputMask } from "src/hooks/useInputMask"
+import useInputMask from "src/hooks/useInputMask/"
 
 export const CreateBudgetModal = forwardRef<HTMLDialogElement>(
   (_props, ref) => {
     const [budgetName, setBudgetName] = useState("")
     const [hasNoLimit, setHasNoLimtit] = useState(false)
 
-    const { value: budgetLimit, onChangeMaskedInput: onChangeBudgetLimit } =
+    const { value: budgetLimit, onChangeValue: onChangeBudgetLimit } =
       useInputMask("currency", "0")
 
     return (
