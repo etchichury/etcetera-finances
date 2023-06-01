@@ -21,7 +21,7 @@ export const currencyMask = (targetValue: string, currency: string = "BRL") => {
 
     cleanValue = preDecimalValue + "." + postDecimalvalue
   } else {
-    cleanValue = `0.${cleanValue}`
+    cleanValue = `0.0${cleanValue}`
   }
 
   return Intl.NumberFormat("pt-BR", {
