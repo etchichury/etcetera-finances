@@ -13,7 +13,7 @@ const useInputMask = (maskType: "currency", initialValue: string) => {
     setValue(mask(value))
   }
 
-  return { value, onChangeValue: onChangeMaskedInput }
+  return { value, setValue: onChangeMaskedInput }
 }
 
 export default useInputMask

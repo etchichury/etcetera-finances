@@ -11,8 +11,10 @@ export const CreateBudgetModal = forwardRef<HTMLDialogElement>(
     const [budgetName, setBudgetName] = useState("")
     const [hasNoLimit, setHasNoLimtit] = useState(false)
 
-    const { value: budgetLimit, onChangeValue: onChangeBudgetLimit } =
-      useInputMask("currency", "0")
+    const { value: budgetLimit, setValue: setBudgetLimit } = useInputMask(
+      "currency",
+      ""
+    )
 
     return (
       <BaseModal ref={ref} aria-label='create budget category'>
