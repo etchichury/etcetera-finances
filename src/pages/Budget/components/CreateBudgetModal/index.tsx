@@ -38,7 +38,10 @@ export const CreateBudgetModal = forwardRef<HTMLDialogElement>(
               id='noLimit'
               label='No limit'
               checked={hasNoLimit}
-              onChange={(e) => setHasNoLimtit(e.target.checked)}
+              onChange={(e) => {
+                setBudgetLimit("")
+                setHasNoLimtit(e.target.checked)
+              }}
             />
           </FormInputsContainer>
           <FormButtonsContainer>
