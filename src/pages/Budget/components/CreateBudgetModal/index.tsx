@@ -32,7 +32,7 @@ export const CreateBudgetModal = forwardRef<HTMLDialogElement>(
               id='budgetLimti'
               value={budgetLimit}
               disabled={hasNoLimit}
-              onChange={(event) => onChangeBudgetLimit(event)}
+              onChange={(event) => setBudgetLimit(event.target.value)}
             />
             <Checkbox
               id='noLimit'

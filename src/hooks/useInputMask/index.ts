@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react"
+import { useState } from "react"
 import { currencyMask } from "./masks"
 
 const masks = {
@@ -9,8 +9,8 @@ const useInputMask = (maskType: "currency", initialValue: string) => {
   const mask = masks[maskType]
   const [value, setValue] = useState(mask(initialValue))
 
-  const onChangeMaskedInput = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(mask(event.target.value))
+  const onChangeMaskedInput = (value: string) => {
+    setValue(mask(value))
   }
 
   return { value, onChangeValue: onChangeMaskedInput }
