@@ -1,4 +1,8 @@
 export const currencyMask = (targetValue: string, currency: string = "BRL") => {
+  if (!targetValue) {
+    return ""
+  }
+
   let cleanValue = targetValue.replace("R$", "").replace(".", "")
 
   if (cleanValue.length > 1) {
