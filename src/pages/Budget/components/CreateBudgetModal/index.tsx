@@ -16,6 +16,12 @@ export const CreateBudgetModal = forwardRef<HTMLDialogElement>(
       ""
     )
 
+    const cleanFormState = () => {
+      setBudgetName("")
+      setHasNoLimtit(false)
+      setBudgetLimit("")
+    }
+
     return (
       <BaseModal ref={ref} aria-label='create budget category'>
         <BudgetForm>
@@ -50,7 +56,11 @@ export const CreateBudgetModal = forwardRef<HTMLDialogElement>(
             <Button appearance='primary' onClick={() => {}}>
               Create
             </Button>
-            <Button appearance='secondary' formMethod='dialog'>
+            <Button
+              appearance='secondary'
+              formMethod='dialog'
+              onClick={cleanFormState}
+            >
               Cancel
             </Button>
           </FormButtonsContainer>
