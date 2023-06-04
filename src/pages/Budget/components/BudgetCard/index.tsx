@@ -158,7 +158,7 @@ const BudgetCard = ({
               Clear All
             </ClearAllButton>
             <AddExpanseButton
-              appearance='secondary'
+              appearance='primary'
               onClick={() => {}}
               aria-label='add entry'
             >

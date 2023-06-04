@@ -24,11 +24,13 @@ export const BudgetCardContainer = styled.article`
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-transform: uppercase;
   margin-bottom: 20px;
 `
 
 export const ShowMoreButton = styled(Button)<{ showMore: boolean }>`
+  width: 50px;
   transform: rotate(0deg);
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: ${(props) => (props.showMore ? `rotate(180deg)` : "")};
@@ -74,11 +76,16 @@ export const BudgetActions = styled.div`
 `
 
 export const AddExpanseButton = styled(Button)`
-  width: fit-content;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
 `
 
 export const ClearAllButton = styled(Button)`
+  width: 100px;
+  height: 35px;
   padding: 0 8px;
+  border-radius: 5px;
 `
 
 export const NoExpensesWarningContainer = styled.div`
