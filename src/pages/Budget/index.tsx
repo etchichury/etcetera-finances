@@ -1,5 +1,5 @@
 import { Plus } from "styled-icons/bootstrap"
-import Button from "src/components/Button"
+import Button from "components/Button"
 import { BudgetGrid, BudgetPageContainer } from "./styles"
 import BudgetCard from "./components/BudgetCard"
 import { CreateBudgetModal } from "./components/CreateBudgetModal"

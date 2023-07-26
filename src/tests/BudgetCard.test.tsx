@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
-import BudgetCard from "src/pages/Budget/components/BudgetCard"
+import BudgetCard from "pages/Budget/components/BudgetCard"
 
 test("renders desired content when collapsed", () => {
   render(<BudgetCard budgetName='Groceries' budgetLimit={800} />)

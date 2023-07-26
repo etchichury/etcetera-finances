@@ -9,7 +9,7 @@ import {
   SectionLink,
   TitleSection,
 } from "./styles"
-import ProfileMenu from "src/components/ProfileMenu"
+import ProfileMenu from "components/ProfileMenu"
 
 const Sidebar = () => {
   return (

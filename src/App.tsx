@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom"
-import GlobalStyle from "src/GlobalStyles"
-import Account from "src/pages/Account"
-import Budget from "src/pages/Budget"
+import GlobalStyle from "./GlobalStyles"
+import Account from "pages/Account"
+import Budget from "pages/Budget"
 
 function App() {
   return (

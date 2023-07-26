@@ -1,5 +1,5 @@
-import { Outlet } from "react-router-dom";
-import Sidebar from "src/components/Sidebar";
+import { Outlet } from "react-router-dom"
+import Sidebar from "components/Sidebar"
 
 const Account = () => {
   return (
@@ -7,7 +7,7 @@ const Account = () => {
       <Sidebar />
       <Outlet />
     </>
-  );
-};
+  )
+}
 
-export default Account;
+export default Account

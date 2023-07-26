@@ -1,10 +1,10 @@
 import { forwardRef, useState } from "react"
-import BaseModal from "src/components/BaseModal"
-import Button from "src/components/Button"
-import Checkbox from "src/components/Checkbox"
-import TextInput from "src/components/TextInput"
+import BaseModal from "components/BaseModal"
+import Button from "components/Button"
+import Checkbox from "components/Checkbox"
+import TextInput from "components/TextInput"
+import useInputMask from "hooks/useInputMask"
 import { BudgetForm, FormButtonsContainer, FormInputsContainer } from "./styles"
-import useInputMask from "src/hooks/useInputMask/"
 
 export const CreateBudgetModal = forwardRef<HTMLDialogElement>(
   (_props, ref) => {

@@ -5,6 +5,7 @@ import {
   PencilFill,
   TrashFill,
 } from "@styled-icons/bootstrap"
+import useOutsideClick from "hooks/useOutsideClick"
 import {
   BudgetCardContainer,
   Header,
@@ -18,7 +19,6 @@ import {
   BudgetTextualProgress,
   NoExpensesWarningContainer,
 } from "./styles"
-import useOutsideClick from "src/hooks/useOutsideClick"
 
 type BudgetEntry = {
   id: number

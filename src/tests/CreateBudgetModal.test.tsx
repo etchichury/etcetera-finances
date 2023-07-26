@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
-import { CreateBudgetModal } from "src/pages/Budget/components/CreateBudgetModal"
+import { CreateBudgetModal } from "pages/Budget/components/CreateBudgetModal"
 
 test("Budget limit correctly formats currency", async () => {
   const user = userEvent.setup()
