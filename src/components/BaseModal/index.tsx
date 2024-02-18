@@ -15,4 +15,6 @@ const BaseModal = forwardRef<HTMLDialogElement, BaseModalProps>(
   }
 )
 
+BaseModal.displayName = "BaseModal"
+
 export default BaseModal
